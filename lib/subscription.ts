@@ -21,3 +21,4 @@ export async function isSubscribed(): Promise<boolean> {
 export async function getRecordCount(userId: string): Promise<number> {
   return prisma.record.count({ where: { userId } });
 }
+//

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "10mb", // for audio uploads
     },
   },
-  allowedDevOrigins: ["95.47.56.14"],
+  allowedDevOrigins: ["*"],
 };
 
 export default nextConfig;

@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
 import { prisma } from "@/lib/prisma";
+import { stripe } from "@/lib/stripe";
+import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
 export async function POST(req: NextRequest) {
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
       // Checkout completed — ensure user is marked active immediately
       case "checkout.session.completed": {
-        const session = event.data.object as Stripe.CheckoutSession;
+        const session = event.data.object as Stripe.Checkout.Session;
         if (session.mode === "subscription" && session.metadata?.userId) {
           const subscription = await stripe.subscriptions.retrieve(
             session.subscription as string
