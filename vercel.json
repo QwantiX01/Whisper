@@ -1,0 +1,17 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "bunx prisma generate && bunx next build",
+  "devCommand": "bunx next dev",
+  "installCommand": "bun install",
+  "functions": {
+    "app/api/transcribe/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/records/[id]/chat/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/webhooks/stripe/route.ts": {
+      "maxDuration": 10
+    }
+  }
+}
